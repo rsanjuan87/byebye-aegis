@@ -85,3 +85,19 @@ sudo rm /usr/sbin/aliyun-service
 sudo rm /lib/systemd/system/aliyun.service
 sudo systemctl disable aliyun
 echo -e "$green uninstall succeed! $none"
+
+wget http://update.aegis.aliyun.com/download/uninstall.sh
+chmod +x uninstall.sh
+./uninstall.sh
+
+wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh
+chmod +x quartz_uninstall.sh
+./quartz_uninstall.sh
+
+pkill aliyun-service
+rm -rf /etc/init.d/agentwatch /usr/sbin/aliyun-service
+rm -rf /usr/sbin/aliyun*
+rm -rf /usr/local/aegis*
+rm -rf /etc/systemd/system/aliyun.service
+
+
